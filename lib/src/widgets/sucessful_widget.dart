@@ -67,7 +67,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
 
   @override
   Widget build(BuildContext context) {
-    final accentColor = Theme.of(context).accentColor;
+    final hintColor = Theme.of(context).hintColor;
     return new Container(
       child: new CustomAnimatedWidget(
         controller: _mainController,
@@ -77,7 +77,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
             sizedBox,
             new Image.asset(
               'assets/images/successful.png',
-              color: accentColor,
+              color: hintColor,
               width: 50.0,
               package: 'flutter_paystack',
             ),
@@ -107,7 +107,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
               child: new Text(
                 _countdownAnim.value.toString(),
                 style: TextStyle(
-                    color: accentColor,
+                    color: hintColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0),
               ),

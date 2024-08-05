@@ -149,11 +149,11 @@ class _HomePageState extends State<HomePage> {
                 _verticalSizeBox,
                 Theme(
                   data: Theme.of(context).copyWith(
-                    accentColor: green,
+                    hintColor: green,
                     primaryColorLight: Colors.white,
                     primaryColorDark: navyBlue,
                     textTheme: Theme.of(context).textTheme.copyWith(
-                          bodyText2: TextStyle(
+                          bodyMedium: TextStyle(
                             color: lightBlue,
                           ),
                         ),

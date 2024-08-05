@@ -165,7 +165,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
   }
 
   Widget _buildTitle() {
-    final accentColor = Theme.of(context).accentColor;
+    final hintColor = Theme.of(context).hintColor;
     var emailAndAmount = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
@@ -194,7 +194,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
                   child: Text(Utils.formatAmount(_charge.amount),
                       style: TextStyle(
                           fontSize: 15.0,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                           fontWeight: FontWeight.w500)))
             ],
           )
@@ -229,15 +229,14 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
             ],
           ),
         ),
-        if (_showTabs) buildCheckoutMethods(accentColor)
+        if (_showTabs) buildCheckoutMethods(hintColor)
       ],
     );
   }
 
-  Widget buildCheckoutMethods(Color accentColor) {
+  Widget buildCheckoutMethods(Color hintColor) {
     return AnimatedSize(
       duration: const Duration(milliseconds: 300),
-      vsync: this,
       curve: Curves.fastOutSlowIn,
       child: new Container(
         color: Colors.grey.withOpacity(0.1),
@@ -247,14 +246,14 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
           controller: _tabController,
           isScrollable: true,
           unselectedLabelColor: Colors.black54,
-          labelColor: accentColor,
+          labelColor: hintColor,
           labelStyle:
               new TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
           indicator: new ShapeDecoration(
             shape: RoundedRectangleBorder(
                   borderRadius: tabBorderRadius,
                   side: BorderSide(
-                    color: accentColor,
+                    color: hintColor,
                     width: 1.0,
                   ),
                 ) +
